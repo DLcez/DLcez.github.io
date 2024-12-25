@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cantinho da Elaine</title>
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+      
+      .pacifico-regular {
+        font-family: "Pacifico", cursive;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 70px;
+      }
+    </style>
+  </head>
+  
+<body>
+  <!-- Ícones de Redes Sociais -->
+  <div class="social-icons">
+    <a href="https://wa.me/34992454692" target="_blank" title="WhatsApp">
+      <i class="fa-brands fa-square-whatsapp"></i>
+    </a>
+    <a href="https://www.instagram.com/" target="_blank" title="Instagram">
+      <i class="fa-brands fa-square-instagram"></i>
+    </a>
+  </div>
+
+  <!-- Barra de Navegação Fixa -->
+  <nav class="navbar">
+    <div class="logo">
+      <h2>Cantinho da Elaine</h2>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Início</a></li> <!-- Link para a seção Início -->
+      <li><a href="#menu">Pratos</a></li> <!-- Link para a seção Cardápio -->
+      <li><a href="#sobre">Sobre</a></li> <!-- Link para a seção Sobre -->
+      <li><a href="#contato">Contato</a></li> <!-- Link para a seção Contato -->
+    </ul>
+  </nav>
+
+  <div class="header-hero-container">
+    <div class="background-image"></div>
+
+    <header>
+      <h1 class="pacifico-regular">Bem-Vindo ao Elaine</h1>
+      <p class="pacifico-regular">Onde cada refeição é preparada com carinho para tornar o seu dia ainda mais especial.</p>
+    </header>
+
+    <section id="home" class="hero"> <!-- Seção Início -->
+      <div class="hero-text">
+        <h2>Que tal saborear quitandas fresquinhas?</h2>
+        <p>Bolos irresistíveis, doces caseiros e deliciosas roscas, tudo feito com aquele toque especial que você merece? Além disso, oferecemos pratos feitos sob encomenda, como o irresistível strogonoff, lasanha e muitas outras opções que vão agradar a todos os gostos.</p>
+        <p>Venha descobrir o sabor caseiro e aconchegante que vai transformar suas refeições em momentos únicos. Faça já sua encomenda e deixe que o Cantinho da Elaine cuide de tudo com muito amor e dedicação.</p>
+        <button onclick="location.href='menu.html'">Confira o Cardápio</button>
+      </div>
+      <img src="src/styles/imagens/logo.jpg.webp" alt="Logo" class="hero-image">
+    </section>
+  </div>
+
+  <section id="menu" class="dishes"> <!-- Seção Cardápio -->
+    <div class="dish">
+      <img src="src/styles/imagens/bolos.jpg" alt="Bolo">
+      <h3>Bolos Caseiros</h3>
+      <p>Feitos com ingredientes fresquinhos, ideais para qualquer ocasião.</p>
+      <p><strong>R$ 29,90</strong></p>
+    </div>
+    <div class="dish">
+      <img src="src/styles/imagens/salgadoo.jpg" alt="Salgado">
+      <h3>Salgados Diversos</h3>
+      <p>Perfeitos para festas e lanches rápidos.</p>
+      <p><strong>R$ 34,90</strong></p>
+    </div>
+    <div class="dish">
+      <img src="src/styles/imagens/pratos.jpg" alt="Prato Especial">
+      <h3>Prato Especial</h3>
+      <p>Strogonoff, Lasanha, e outros pratos feitos com todo o carinho.</p>
+      <p><strong>R$ 39,90</strong></p>
+    </div>
+  </section>
+
+  <section id="sobre" class="about"> <!-- Seção Sobre -->
+    <h2>Sobre o Cantinho da Elaine</h2>
+    <p>Com mais de 10 anos de experiência na culinária caseira, a Elaine se dedica a oferecer pratos fresquinhos e de qualidade. Seu cardápio inclui desde deliciosos bolos e salgados, até pratos especiais preparados sob encomenda.</p>
+  </section>
+
+  <section id="contato" class="contact"> <!-- Seção Contato -->
+    <h2>Contato</h2>
+    <p>Visite-nos ou entre em contato:</p>
+    <p>Endereço: Rua Exemplo, 123 - Cidade</p>
+    <p>Telefone: (00) 1234-5678</p>
+    <a href="#">Acompanhe nas redes sociais</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Cantinho da Elaine. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Seleção de todas as imagens, incluindo a logo
+      const images = document.querySelectorAll('.dish img, .hero-image'); // Adiciona .hero-image
+  
+      const button = document.querySelector('.hero button');
+  
+      // Adicionar a classe 'visible' em cada imagem após o carregamento da página
+      setTimeout(() => {
+          images.forEach(image => {
+              image.classList.add('visible'); // Faz a imagem aparecer com efeito de fade-in
+          });
+      }, 1000); // Espera 1 segundo após o carregamento
+  
+      // Efeito de hover nas imagens (aumentar e mudar a opacidade)
+      images.forEach(image => {
+          image.addEventListener('mouseenter', () => {
+              image.style.transform = 'scale(1.1)';
+              image.style.opacity = '0.9';
+              image.style.transition = 'transform 0.3s ease, opacity 0.3s ease';
+          });
+  
+          image.addEventListener('mouseleave', () => {
+              image.style.transform = 'scale(1)';
+              image.style.opacity = '1';
+          });
+      });
+  
+      // Efeito de hover no botão (alterar a cor e adicionar sombra)
+      button.addEventListener('mouseenter', () => {
+          button.style.backgroundColor = '#D32F2F';
+          button.style.transform = 'scale(1.05)';
+          button.style.transition = 'transform 0.3s ease, background-color 0.3s ease';
+          button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+      });
+  
+      button.addEventListener('mouseleave', () => {
+          button.style.backgroundColor = '#FF7043'; // Cor original
+          button.style.transform = 'scale(1)';
+          button.style.boxShadow = 'none'; // Remove a sombra
+      });
+  });
+  
+  </script>
+</body>
+</html>
